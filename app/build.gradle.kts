@@ -6,6 +6,9 @@ android {
     namespace = "algonquin.cst2335.elma0076"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true // this app will select element automatically
+    }
     defaultConfig {
         applicationId = "algonquin.cst2335.elma0076"
         minSdk = 27
