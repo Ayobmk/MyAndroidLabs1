@@ -10,23 +10,37 @@
         android:id="@+id/textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_message"
-       />
+        android:text="@string/hello_message" />
 
     <Button
+        android:id="@+id/mybutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="@string/button_message"
-        android:id="@+id/mybutton"
-       />
+        android:text="@string/button_message" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drink_coffee_msg" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="@string/drink_coffee_msg" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="@string/drink_coffee_msg" />
 
     <EditText
         android:id="@+id/myedittext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/editmessage"
-        android:hint="@string/hinttext"
-        />
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:text="@string/edit_message" />
 
 </LinearLayout>
