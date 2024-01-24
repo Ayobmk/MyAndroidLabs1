@@ -5,8 +5,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.provider.SyncStateContract;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import algonquin.cst2335.elma0076.R;
 import algonquin.cst2335.elma0076.databinding.ActivityMainBinding;
 import data.MainViewModel;
 
@@ -34,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
 //        TextView mytext = findViewById(R.id.textview);
 //        TextView mytext = variableBinding.textview;
 //        variableBinding.textview.setText(model.editString);
+        variableBinding.myimagebutton.setOnClickListener(view -> {
+        variableBinding.myimageview.setImageResource(R.drawable.logo_algonquin);
+
+            // Get the width and height of the ImageButton
+            int width = view.getWidth();
+            int height = view.getHeight();
+
+            // Show a Toast message with the width and height
+            Toast.makeText(MainActivity.this, "The width = " + width + " and height = " + height, Toast.LENGTH_SHORT).show();
+        });
 
 //        Button btn = findViewById(R.id.mybutton);
 //        Button btn = variableBinding.mybutton;
@@ -58,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             model.isSelected.postValue(isChecked);
             this.setChecked();
         });
+//    variableBinding.imageview1;
     }
 
 //    model.editString.observe(this, new Observe<String>(){
