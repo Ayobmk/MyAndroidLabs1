@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -64,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         //EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
         //String message = editText.getText().toString();
         //nextPage.putExtra(EXTRA_MESSAGE, message);
+
+        TextView email= findViewById(R.id.EmailAddress) ;
+        nextPage.putExtra("EmailAddress",email.getText().toString());
         startActivity(nextPage);
     }
 
