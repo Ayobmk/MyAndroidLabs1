@@ -7,66 +7,56 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewPassword"
-        android:layout_width="290dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="200dp"
-        android:text="Enter your email address:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/EmailAddress"
-        android:layout_width="290dp"
+        android:id="@+id/email_txtView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Type  email here"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPassword"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="290dp"
-        android:layout_height="48dp"
-        android:onClick="sendMessage"
-        android:text="Login"
+        android:text="Enter your email address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Password"
-        app:layout_constraintVertical_bias="0.24000001"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textViewpasswd"
-        android:layout_width="290dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="30dp"
-        android:text="Type your password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailAddress"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Password"
-        android:layout_width="290dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="12dp"
+        android:id="@+id/email_editTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Type email here"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/email_txtView"
+        app:layout_constraintStart_toStartOf="@+id/email_txtView"
+        app:layout_constraintTop_toBottomOf="@+id/email_txtView" />
+
+    <TextView
+        android:id="@+id/pass_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Type your password:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_txtView" />
+
+    <EditText
+        android:id="@+id/pass_editTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Type password here"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/pass_txtView"
+        app:layout_constraintStart_toStartOf="@+id/pass_txtView"
+        app:layout_constraintTop_toBottomOf="@+id/pass_txtView" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewpasswd"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/pass_editTxt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,65 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
-    <Button
-        android:id="@+id/changeBtn"
-        android:layout_width="175dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="36dp"
-        android:text="CHANGE PICTURE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/callBtn"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/phoneImg"
-        android:layout_width="63dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="232dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNmber"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_menu_camera"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/callBtn"
-        android:layout_width="171dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="32dp"
-        android:text="CALL NUMBER"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTop"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/phoneNmber"
-        android:layout_width="120dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTop"
-        tools:ignore="MissingConstraints" />
-
     <TextView
-        android:id="@+id/textViewTop"
+        android:id="@+id/welcome_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="TextView"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_txtView" />
+
+    <Button
+        android:id="@+id/callNumber_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Call Number"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPhone"
+        app:layout_constraintStart_toEndOf="@+id/editTextPhone" />
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="86dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <Button
+        android:id="@+id/changePic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="64dp"
+        android:text="Change Picture"
+        app:layout_constraintBottom_toBottomOf="@+id/picture"
+        app:layout_constraintEnd_toEndOf="@+id/callNumber_btn"
+        app:layout_constraintStart_toEndOf="@+id/picture"
+        app:layout_constraintTop_toBottomOf="@+id/callNumber_btn"
+        app:layout_constraintVertical_bias="0.481" />
 </androidx.constraintlayout.widget.ConstraintLayout>
