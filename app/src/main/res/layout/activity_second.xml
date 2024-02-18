@@ -7,55 +7,72 @@
     tools:context=".SecondActivity">
 
     <TextView
-        android:id="@+id/welcome_txtView"
+        android:id="@+id/textViewTop"
+        android:layout_width="123dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="500dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="500dp"
+        android:text="Centered TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="252dp"
+        android:text="Welcome back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonCall"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:ems="10"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="16dp"
+        android:text="Call number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextPhone"
+        app:layout_constraintTop_toTopOf="@+id/editTextPhone" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="198dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:hint="Enter phone number"
         android:inputType="phone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_txtView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewWelcome" />
 
     <Button
-        android:id="@+id/callNumber_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Call Number"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextPhone"
-        app:layout_constraintStart_toEndOf="@+id/editTextPhone" />
+        android:id="@+id/buttonChangePicture"
+        android:layout_width="155dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:text="Change picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCall" />
 
     <ImageView
-        android:id="@+id/picture"
-        android:layout_width="86dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="42dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
-    <Button
-        android:id="@+id/changePic_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="64dp"
-        android:text="Change Picture"
-        app:layout_constraintBottom_toBottomOf="@+id/picture"
-        app:layout_constraintEnd_toEndOf="@+id/callNumber_btn"
-        app:layout_constraintStart_toEndOf="@+id/picture"
-        app:layout_constraintTop_toBottomOf="@+id/callNumber_btn"
-        app:layout_constraintVertical_bias="0.481" />
 </androidx.constraintlayout.widget.ConstraintLayout>

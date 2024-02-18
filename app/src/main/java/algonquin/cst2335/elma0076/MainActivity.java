@@ -1,65 +1,110 @@
 package algonquin.cst2335.elma0076;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.Toast;
+
+import java.text.BreakIterator;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String TAG = "MainActivity";
+    ImageView imgView;
+    Switch sw;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Log.w( TAG, "In onCreate() - Loading Widgets" );
-        Log.w(TAG, "Inside onCreate() - This is called when the activity is first created.");
-
-        Button loginButton;
-        loginButton = findViewById(R.id.login_btn);
-
-        TextView EmailEditTxt;
-        EmailEditTxt = findViewById(R.id.email_editTxt);
-
-        loginButton.setOnClickListener(click ->{
-            Intent nextPage = new Intent(MainActivity.this, SecondActivity.class);
-            nextPage.putExtra("EmailAddress", EmailEditTxt.getText().toString());
-            startActivity(nextPage);
-        });
-    }
 
     @Override
     protected void onStart() {
         super.onStart();
-        super.onStart();
-        Log.w(TAG, "Inside onStart() - This is called when the activity becomes visible to the user.");
     }
 
+
     @Override
-    protected void onStop() {
-        super.onStop();
-        Log.w(TAG, "Inside onStop() - This is called when the activity is no longer visible to the user.");
+    protected void onResume() {
+        super.onResume();
     }
+
+
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.w(TAG, "Inside onPause() - The paused activity is called when the current activity is being paused and the previous activity is being resumed.");
     }
+
+
+
     @Override
-    protected void onResume() {
-        super.onResume();
-        Log.w(TAG, "Inside onResume() - This is called when the user starts interacting with the application.");
+    protected void onStop() {
+        super.onStop();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.w(TAG, "Inside onDestroy() - This is called before the activity is destroyed by the system.");
     }
+    private static final String SHARED_PREFS_FILE = "MyData";
+    private static final String PHONE_NUMBER_KEY = "PhoneNumber";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        SharedPreferences prefs = getSharedPreferences(SHARED_PREFS_FILE, Context.MODE_PRIVATE);
+        String emailAddress = prefs.getString("LoginName", "");
+
+
+        EditText editTextEmail = findViewById(R.id.editTextEmail);
+        editTextEmail.setText(emailAddress);
+
+        Log.w("MainActivity", "In onCreate() - Loading Widgets");
+
+
+        Button loginButton = findViewById(R.id.buttonLogin);
+
+        loginButton.setOnClickListener(clk -> {
+            String enteredEmail = editTextEmail.getText().toString();
+
+            // Save the email address to shared preferences
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("LoginName", enteredEmail);
+
+            editor.apply();
+
+            Intent nextPage = new Intent(MainActivity.this, SecondActivity.class);
+
+
+            EditText et = findViewById(R.id.editTextEmail);
+
+
+            nextPage.putExtra("EmailAddress", et.getText().toString());
+            Intent fromPrevious = getIntent();
+            String EmailAddress = fromPrevious.getStringExtra("EmailAddress");
+
+            startActivity(nextPage);
+        });
+
+
+
+    }
+
 }
