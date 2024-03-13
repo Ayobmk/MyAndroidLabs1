@@ -38,7 +38,7 @@ public class testFindMissingUpperCase {
 
     @Test
     public void testFindMissingUpperCase() {
-        ViewInteraction appCompatEditText = onView(withId(R.id.TextEditPasswd);
+        ViewInteraction appCompatEditText = onView(withId(R.id.TextEditPasswd));
         appCompatEditText.perform(replaceText("password123#$*"), closeSoftKeyboard());
 
         ViewInteraction materialButton = onView(withId(R.id.BtnLogin));
